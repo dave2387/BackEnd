@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+        <script>
+            let num1 = parseInt(prompt("Enter number 1:")); 
+            let sign = prompt("Enter 1 for addition , 2 for substraction , 3 for multiplication , 4 for division"); 
+            let num2 = parseInt(prompt("Enter number 2:")); 
+
+            if (sign==1) {
+                ans = num1 + num2 ;
+                document.writeln("Sum is "+ans);
+            }
+            if (sign==2) {
+                ans = num1 - num2 ;
+                document.writeln("substraction is "+ans);
+            }
+            if (sign==3) {
+                ans = num1 * num2 ;
+                document.writeln("multiplication is "+ans);
+            }
+            if (sign==4) {
+                ans = num1 / num2 ;
+                document.writeln("division is "+ans);
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = parseInt(prompt("Enter number :"));
+        let copy = num;
+        let count = 0;
+
+        while (copy != 0) {
+            count++;
+            copy = parseInt(copy / 10);
+        }
+
+        function power(count, rem) {
+            let ans = 1;
+            for (let i = 0; i < count; i++) {
+                ans = ans * rem;
+            }
+            return ans;
+        }
+        
+        let ans = 0;
+        copy=num;
+        while (copy != 0) {
+            let rem = copy % 10;
+            ans = ans + power(count, rem);
+            copy = parseInt(copy / 10);
+        }
+        if(ans == num){
+            document.write("Number is palindrom ");
+        }
+        else{
+            document.write("Number is not a palindrom ");
+        }
+
+    </script>
+</body>
+
+</html>
