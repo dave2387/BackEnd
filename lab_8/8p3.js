@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
         if(err){
             console.log("Error",err);
         }
-        res.send(data.toString());
+        res.send(data.toString()); 
     });
 });
 
