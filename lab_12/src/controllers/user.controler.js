@@ -1,6 +1,8 @@
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import User from "../models/user.model.js";
 import generateToken from "../utils/generateToken.js";
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const registerUser = async (req, res) => {
   try {
@@ -11,9 +13,8 @@ export const registerUser = async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
+    const hashedPassword = await bcrypt.hash(password, 10);
+    
     const user = await User.create({
       name,
       email,
@@ -44,10 +45,14 @@ export const loginUser = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid email or password" });
     }
+    
 
+    const token = await generateToken(user.id)
+
+    
     res.json({
       message: "Login successful",
-      token: generateToken(user._id),
+      token: token,
       user: {
         id: user._id,
         name: user.name,
