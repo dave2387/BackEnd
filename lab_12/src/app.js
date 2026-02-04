@@ -1,5 +1,5 @@
 import express from "express"
-import userRoutes from "../src/routes/user.route.js"
+import userRoutes from "./routes/user.route.js"
 import { dbConnect  } from "./config/db.js";
 import dotenv from 'dotenv'
 dotenv.config();
