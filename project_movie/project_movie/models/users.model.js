@@ -1,13 +1,6 @@
 const db = require("../db/mysql")
 
-async function getAll(){
-    try{
-        const [data,fields] = await db.query("SELECT * FROM `users`");
-        return data;
-    }catch(err){
-        return false;
-    }
-}
+1
 
 async function getByID(id){
     try{

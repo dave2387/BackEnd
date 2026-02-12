@@ -6,7 +6,7 @@ function authMiddleware(req,res,next){
             next()
         }
         else{
-            var decoded = jwt.verify(req.headers.authorization.split(" ")[1], 'shhhhh');
+            var decoded = jwt.verify(req.headers.authorization.split(" ")[1], 'Hellooo');
             next()
         }
     } catch(err) {
