@@ -47,4 +47,4 @@ async function deleteById(id,formData){
     }
 }
 
-module.exports = {getAll,getByID,insert,update,deleteById,getByUserName}
+module.exports = {getByID,insert,update,deleteById,getByUserName}
